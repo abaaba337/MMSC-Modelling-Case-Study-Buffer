@@ -1,0 +1,13 @@
+import dill
+
+def Readpickle(doc_path):
+    with open(doc_path, 'rb') as file:
+        return dill.load(file)
+
+data = Readpickle('./data/simul_result_5000.pkl')
+mu , B  = data['mu'] , data['B']
+occupancyRates = data['occupancyRates']
+emptyProbabilities = data['emptyProbabilities']
+deltas = data['deltas']
+epsilons = data['epsilons']
+ts = data['ts']
